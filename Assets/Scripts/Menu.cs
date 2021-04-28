@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     #region Variables
     [SerializeField] AudioMixer AM;
     [SerializeField] AudioManager audioManager;
+    string retrievedString;
     #endregion
 
     public void SetMasterVolume(float v)
@@ -46,6 +47,23 @@ public class Menu : MonoBehaviour
         else
         {
             audioManager.Play(name);
+        }
+    }
+
+    public void GetString (string name)
+    {
+        retrievedString = name;
+    }
+
+    public void PlaySynchro(string name)
+    {
+        if (audioManager.Status(name))
+        {
+            audioManager.Stop(name);
+        }
+        else
+        {
+            audioManager.PlaySynchro(retrievedString, name);
         }
     }
 }

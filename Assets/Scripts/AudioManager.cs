@@ -7,9 +7,7 @@ public class AudioManager : MonoBehaviour
     public Audio[] sounds;
 
     void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        
+    {     
         foreach (Audio s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -82,5 +80,35 @@ public class AudioManager : MonoBehaviour
 
         bool status = s.source.isPlaying;
         return status;
+    }
+
+    public void PlaySynchro (string name, string trackToSynchro)
+    {
+        Audio s = Array.Find(sounds, sound => sound.name == name);
+        Audio track = Array.Find(sounds, sound => sound.name == trackToSynchro);
+
+        if (s != null && s.source.isPlaying)
+        {
+            track.source.time = s.source.time;
+            track.source.Play();
+        }
+    }
+
+    public void Crescendo(string name, float time, float vol)
+    {
+        Audio s = Array.Find(sounds, sound => sound.name == name);
+        for (float t = 0; t <= time; t += Time.deltaTime)
+        {
+            s.source.volume = t / time;
+        }
+    }
+
+    public void Decrescendo(string name, float time, float vol)
+    {
+        Audio s = Array.Find(sounds, sound => sound.name == name);
+        for (float t = 0; t < time; t += Time.deltaTime)
+        {
+            s.source.volume = t / time;
+        }
     }
 }
