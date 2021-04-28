@@ -1935,7 +1935,7 @@ MonoBehaviour:
   sounds:
   - name: ChillTrack
     clips:
-    - {fileID: 8300000, guid: 8344ec24441ed90449e905fd4cbc86d1, type: 3}
+    - {fileID: 8300000, guid: df381c84ae80a2348a72e1e4d186c86c, type: 3}
     mixerGroup: {fileID: -6499754272314554087, guid: 31fb7c07ca1fea44291ca76201802950, type: 2}
     volume: 1
     pitch: 1
@@ -1945,7 +1945,7 @@ MonoBehaviour:
     hasMultipleClips: 0
   - name: Tension
     clips:
-    - {fileID: 8300000, guid: 5bf15e7788d26ae43bae38af6777387c, type: 3}
+    - {fileID: 8300000, guid: 093371f19726d0b4b9d220a6338a1339, type: 3}
     mixerGroup: {fileID: -6499754272314554087, guid: 31fb7c07ca1fea44291ca76201802950, type: 2}
     volume: 1
     pitch: 1
