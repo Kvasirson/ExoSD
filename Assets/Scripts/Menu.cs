@@ -26,11 +26,21 @@ public class Menu : MonoBehaviour
         AM.SetFloat("SFXVolume", v);
     }
 
+    public void Play(string name)
+    {
+        audioManager.Play(name);
+    }
+
     public void PlayPause(string name)
     {
         if (audioManager.Status(name))
         {
             audioManager.Pause(name);
+            if (audioManager.Status("Tension"))
+            {
+                audioManager.Stop("Tension");
+            }
+            audioManager.Stop(retrievedString);
         }
         else
         {
@@ -65,5 +75,23 @@ public class Menu : MonoBehaviour
         {
             audioManager.PlaySynchro(retrievedString, name);
         }
+    }
+
+    public void PlayandStop(string name)
+    {
+        if (audioManager.Status(retrievedString))
+        {
+            audioManager.Stop(retrievedString);
+            if (audioManager.Status("Tension"))
+            {
+                audioManager.Stop("Tension");
+            }
+        }
+        audioManager.Play(name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

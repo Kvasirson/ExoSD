@@ -38,17 +38,18 @@ public class AudioManager : MonoBehaviour
         Audio s = Array.Find(sounds, sound => sound.name == name);
 
         if (s == null)
+        {
+            Debug.Log("null");
             return;
+        }  
 
         if (s.hasMultipleClips)
         {
             int newIndex = UnityEngine.Random.Range(0, s.clips.Length);
             s.source.clip = s.clips[newIndex];
         }
-        else
-        {
-            s.source.Play();
-        }
+        s.source.Play();
+
     }
     
     public void Stop (string name)
@@ -94,21 +95,23 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void Crescendo(string name, float time, float vol)
+    /*public void Crescendo(string name, float time)
     {
         Audio s = Array.Find(sounds, sound => sound.name == name);
+        float vol = s.volume;
         for (float t = 0; t <= time; t += Time.deltaTime)
         {
-            s.source.volume = t / time;
+            s.source.volume = t / time * vol;
         }
     }
 
     public void Decrescendo(string name, float time, float vol)
     {
         Audio s = Array.Find(sounds, sound => sound.name == name);
-        for (float t = 0; t < time; t += Time.deltaTime)
+        float vol = s.volume;
+        for (float t = time; t > 0; t -= Time.deltaTime)
         {
-            s.source.volume = t / time;
+            s.source.volume = (t / time)*vol;
         }
-    }
+    }*/
 }
