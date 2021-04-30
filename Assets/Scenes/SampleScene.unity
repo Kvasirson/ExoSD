@@ -2365,19 +2365,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 479605297}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: GetString
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ChillTrack
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 479605297}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayandStop
+        m_MethodName: Play
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2718,19 +2706,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 479605297}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: GetString
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ChillTrack
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 479605297}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayandStop
+        m_MethodName: Play
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3333,7 +3309,7 @@ MonoBehaviour:
   - name: Victory
     clips:
     - {fileID: 8300000, guid: 43682f97e76a6d844961b1ef9be91201, type: 3}
-    mixerGroup: {fileID: -6499754272314554087, guid: 31fb7c07ca1fea44291ca76201802950, type: 2}
+    mixerGroup: {fileID: 8956633909758665813, guid: 31fb7c07ca1fea44291ca76201802950, type: 2}
     volume: 1
     pitch: 1
     loop: 0
@@ -3343,7 +3319,7 @@ MonoBehaviour:
   - name: GameOver
     clips:
     - {fileID: 8300000, guid: 7e7638aa091ca544eb216c9a0c3e4e11, type: 3}
-    mixerGroup: {fileID: -6499754272314554087, guid: 31fb7c07ca1fea44291ca76201802950, type: 2}
+    mixerGroup: {fileID: 8956633909758665813, guid: 31fb7c07ca1fea44291ca76201802950, type: 2}
     volume: 1
     pitch: 1
     loop: 0
@@ -3544,7 +3520,7 @@ GameObject:
   - component: {fileID: 2002921543}
   - component: {fileID: 2002921542}
   m_Layer: 5
-  m_Name: ChillTrack (1)
+  m_Name: QuitApplication
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3616,8 +3592,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 479605297}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayPause
-        m_Mode: 5
+        m_MethodName: Quit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
